@@ -555,6 +555,7 @@
   background-color: #fef2f2;
 }
 
+
 /* ==========================================================================
    Checkout & Stepper Styles
    ========================================================================== */
@@ -1115,7 +1116,7 @@
    ========================================================================== */
 
 .khadra-receipt-wrapper {
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -1124,12 +1125,12 @@
   background: #ffffff;
   border-radius: 14px;
   border: 1px solid #e5e7eb;
-  padding: 1.5rem 2rem;
-  margin-bottom: 2rem;
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
 }
@@ -1137,19 +1138,19 @@
 .receipt-success-badge {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .success-icon-pulse {
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: #ecfdf5;
   color: #059669;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   flex-shrink: 0;
   animation: pulse-ring 2s infinite;
 }
@@ -1167,14 +1168,14 @@
 }
 
 .receipt-success-title {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: #065f46;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.2rem 0;
 }
 
 .receipt-success-subtitle {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: #6b7280;
   margin: 0;
 }
@@ -1190,8 +1191,8 @@
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  padding: 0.75rem 1.4rem;
-  font-size: 0.95rem;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.92rem;
   font-weight: 800;
   cursor: pointer;
   display: inline-flex;
@@ -1213,8 +1214,8 @@
   border: 1.5px solid #d1d5db;
   color: #374151;
   border-radius: 8px;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.95rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
@@ -1235,7 +1236,7 @@
   background: #ffffff;
   border-radius: 12px;
   border: 1px solid #d1d5db;
-  padding: 2.5rem;
+  padding: 2rem;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
   position: relative;
 }
@@ -1251,26 +1252,26 @@
 .invoice-brand-col {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
 .invoice-logo-badge {
   background: #29572C;
-  padding: 0.5rem 0.85rem;
-  border-radius: 10px;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .invoice-logo-img {
-  height: 48px;
+  height: 42px;
   width: auto;
   display: block;
 }
 
 .invoice-company-name {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 900;
   color: #29572C;
   margin: 0;
@@ -1278,9 +1279,9 @@
 }
 
 .invoice-company-tagline {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #6b7280;
-  margin: 0.2rem 0 0 0;
+  margin: 0.15rem 0 0 0;
   font-weight: 600;
 }
 
@@ -1288,25 +1289,25 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.35rem;
+  gap: 0.3rem;
   text-align: left;
 }
 
 .invoice-type-pill {
   background: #ecf0e2;
   color: #29572C;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 800;
-  padding: 0.25rem 0.75rem;
+  padding: 0.2rem 0.65rem;
   border-radius: 6px;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .invoice-meta-item {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   color: #4b5563;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .invoice-meta-item .meta-label {
@@ -1316,65 +1317,65 @@
 .invoice-meta-item .order-num {
   color: #29572C;
   font-family: monospace, sans-serif;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
 .status-badge.confirmed {
   background: #dcfce7;
   color: #15803d;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 0.15rem 0.55rem;
+  padding: 0.12rem 0.5rem;
   border-radius: 4px;
 }
 
 .invoice-divider {
   height: 1px;
   background: #e5e7eb;
-  margin: 1.75rem 0;
+  margin: 1.25rem 0;
 }
 
 /* Customer & Shipping Grid */
 .invoice-details-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .invoice-card-box {
   background: #fcfcfb;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  padding: 1.15rem;
+  padding: 0.9rem 1rem;
 }
 
 .invoice-box-title {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: #29572C;
-  margin: 0 0 0.85rem 0;
+  margin: 0 0 0.65rem 0;
   display: flex;
   align-items: center;
   gap: 0.45rem;
   border-bottom: 1px dashed #e5e7eb;
-  padding-bottom: 0.45rem;
+  padding-bottom: 0.4rem;
 }
 
 .invoice-info-row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .invoice-info-row .info-title {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: #6b7280;
   font-weight: 600;
 }
 
 .invoice-info-row .info-val {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: #1f2937;
   word-break: break-word;
@@ -1390,7 +1391,7 @@
 
 /* Items Table */
 .invoice-items-table-wrapper {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   overflow: hidden;
@@ -1400,7 +1401,7 @@
   width: 100%;
   border-collapse: collapse;
   text-align: right;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
 }
 
 .invoice-table thead tr {
@@ -1409,12 +1410,12 @@
 }
 
 .invoice-table th {
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 0.9rem;
   font-weight: 700;
 }
 
 .invoice-table td {
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 0.9rem;
   border-bottom: 1px solid #f3f4f6;
   color: #374151;
 }
@@ -1424,19 +1425,19 @@
 }
 
 .th-num, .td-num {
-  width: 40px;
+  width: 38px;
   text-align: center;
 }
 
 .td-item-content {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .td-item-thumb {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 6px;
   object-fit: cover;
   border: 1px solid #e5e7eb;
@@ -1444,12 +1445,12 @@
 
 .td-item-name {
   display: block;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: #111827;
 }
 
 .td-item-brand {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: #6b7280;
 }
 
@@ -1464,53 +1465,53 @@
 /* Bottom Section */
 .invoice-bottom-section {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 2rem;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
   align-items: start;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .invoice-guarantee-box {
   background: #f4f7ee;
   border: 1px solid #d6e2c4;
   border-radius: 8px;
-  padding: 0.9rem 1.15rem;
-  margin-bottom: 1.25rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .invoice-guarantee-box h4 {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 800;
   color: #29572C;
-  margin: 0 0 0.35rem 0;
+  margin: 0 0 0.3rem 0;
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
 .invoice-guarantee-box p {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: #4b5563;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .invoice-official-stamp {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .stamp-circle {
-  width: 105px;
-  height: 105px;
-  border: 2.5px dashed #29572C;
+  width: 95px;
+  height: 95px;
+  border: 2px dashed #29572C;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.35rem;
+  padding: 0.3rem;
   text-align: center;
   color: #29572C;
   transform: rotate(-8deg);
@@ -1518,25 +1519,25 @@
 }
 
 .stamp-top {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .stamp-brand {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 900;
   line-height: 1.1;
-  margin: 0.15rem 0;
+  margin: 0.12rem 0;
 }
 
 .stamp-date {
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-family: monospace;
 }
 
 .stamp-bottom {
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 700;
 }
 
@@ -1544,12 +1545,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
 .barcode-lines {
-  width: 130px;
-  height: 38px;
+  width: 120px;
+  height: 32px;
   background: repeating-linear-gradient(
     90deg,
     #111827 0px,
@@ -1569,7 +1570,7 @@
 
 .barcode-text {
   font-family: monospace;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: #6b7280;
   letter-spacing: 2px;
 }
@@ -1579,15 +1580,15 @@
   background: #fafaf9;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  padding: 1.15rem;
+  padding: 1rem;
 }
 
 .totals-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   color: #4b5563;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.55rem;
 }
 
 .totals-row.discount {
@@ -1598,18 +1599,18 @@
 .totals-divider {
   height: 1px;
   background: #e5e7eb;
-  margin: 0.85rem 0;
+  margin: 0.65rem 0;
 }
 
 .totals-row.grand-total {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 900;
   color: #29572C;
   margin-bottom: 0;
 }
 
 .totals-row.grand-total .grand-val {
-  font-size: 1.3rem;
+  font-size: 1.22rem;
   color: #29572C;
 }
 
@@ -1617,15 +1618,15 @@
 .invoice-sheet-footer {
   text-align: center;
   border-top: 1px solid #e5e7eb;
-  padding-top: 1.25rem;
-  font-size: 0.78rem;
+  padding-top: 1rem;
+  font-size: 0.76rem;
   color: #6b7280;
 }
 
 .print-tip {
   color: #8DA432;
   font-weight: 700;
-  margin-top: 0.35rem;
+  margin-top: 0.25rem;
 }
 
 .cart-view-last-receipt-btn {
@@ -1668,17 +1669,26 @@
 }
 
 /* ==========================================================================
-   PRINT STYLES (@media print)
+   PERFECT SINGLE-PAGE PRINT STYLES (@media print)
    ========================================================================== */
 @media print {
-  /* Hide all non-printable elements */
-  body {
+  @page {
+    size: A4 portrait;
+    margin: 5mm 8mm;
+  }
+
+  html, body {
     background: #ffffff !important;
     color: #000000 !important;
     margin: 0 !important;
     padding: 0 !important;
+    font-size: 10.5px !important;
+    line-height: 1.25 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
+  /* Completely hide all non-printable UI elements */
   .noon-header,
   .noon-footer,
   .cart-checkout-stepper,
@@ -1686,52 +1696,239 @@
   .no-print,
   .floating-coupon-badge,
   .cart-top-bar,
+  .print-tip,
   button {
     display: none !important;
   }
 
-  .esoo-cart-page-wrapper {
+  .esoo-cart-page-wrapper,
+  .esoo-cart-container,
+  .khadra-receipt-wrapper {
     background: #ffffff !important;
     padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
     min-height: auto !important;
   }
 
-  .esoo-cart-container {
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-
-  .khadra-receipt-wrapper {
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-
+  /* Compact sheet that strictly fits 1 page */
   .khadra-invoice-sheet {
     box-shadow: none !important;
-    border: none !important;
-    padding: 8mm 12mm !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 5mm 7mm !important;
     width: 100% !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
-  /* Make header look crisp in B&W or Color */
+  .invoice-header-bar {
+    margin-bottom: 0 !important;
+    padding-bottom: 3px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+  }
+
+  .invoice-brand-col {
+    gap: 0.6rem !important;
+  }
+
   .invoice-logo-badge {
     background: #29572C !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+    padding: 2px 5px !important;
+    border-radius: 4px !important;
+  }
+
+  .invoice-logo-img {
+    height: 30px !important;
+  }
+
+  .invoice-company-name {
+    font-size: 1.15rem !important;
+  }
+
+  .invoice-company-tagline {
+    font-size: 0.68rem !important;
+    margin-top: 1px !important;
+  }
+
+  .invoice-type-pill {
+    font-size: 0.65rem !important;
+    padding: 1px 5px !important;
+    margin-bottom: 1px !important;
+  }
+
+  .invoice-meta-item {
+    font-size: 0.72rem !important;
+    gap: 0.3rem !important;
+  }
+
+  .invoice-divider {
+    height: 1px !important;
+    background: #e5e7eb !important;
+    margin: 5px 0 !important;
+  }
+
+  /* 3-column customer info */
+  .invoice-details-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 5px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .invoice-card-box {
+    padding: 4px 7px !important;
+    border-radius: 4px !important;
+    border: 1px solid #e5e7eb !important;
+    background: #fafaf9 !important;
+  }
+
+  .invoice-box-title {
+    font-size: 0.74rem !important;
+    margin-bottom: 3px !important;
+    padding-bottom: 2px !important;
+  }
+
+  .invoice-info-row {
+    margin-bottom: 2px !important;
+  }
+
+  .invoice-info-row .info-title {
+    font-size: 0.62rem !important;
+  }
+
+  .invoice-info-row .info-val {
+    font-size: 0.72rem !important;
+  }
+
+  /* Compact Items Table */
+  .invoice-items-table-wrapper {
+    margin-bottom: 6px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 4px !important;
+  }
+
+  .invoice-table {
+    font-size: 0.72rem !important;
   }
 
   .invoice-table thead tr {
     background: #29572C !important;
     color: #ffffff !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+  }
+
+  .invoice-table th {
+    padding: 3px 5px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .invoice-table td {
+    padding: 3px 5px !important;
+  }
+
+  .td-item-thumb {
+    display: none !important;
+  }
+
+  .td-item-name {
+    font-size: 0.72rem !important;
+  }
+
+  .td-item-brand {
+    font-size: 0.6rem !important;
+  }
+
+  /* Bottom Financials & Guarantee */
+  .invoice-bottom-section {
+    display: grid !important;
+    grid-template-columns: 1fr 270px !important;
+    gap: 10px !important;
+    align-items: start !important;
+    margin-bottom: 5px !important;
+  }
+
+  .invoice-guarantee-box {
+    padding: 4px 7px !important;
+    margin-bottom: 5px !important;
+    border-radius: 4px !important;
+  }
+
+  .invoice-guarantee-box h4 {
+    font-size: 0.7rem !important;
+    margin-bottom: 1px !important;
+  }
+
+  .invoice-guarantee-box p {
+    font-size: 0.62rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .invoice-official-stamp {
+    gap: 0.8rem !important;
   }
 
   .stamp-circle {
-    border-color: #29572C !important;
-    color: #29572C !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+    width: 58px !important;
+    height: 58px !important;
+    border: 1.5px dashed #29572C !important;
+    padding: 2px !important;
+  }
+
+  .stamp-top {
+    font-size: 0.44rem !important;
+  }
+
+  .stamp-brand {
+    font-size: 0.54rem !important;
+  }
+
+  .stamp-date {
+    font-size: 0.44rem !important;
+  }
+
+  .stamp-bottom {
+    font-size: 0.44rem !important;
+  }
+
+  .barcode-lines {
+    width: 85px !important;
+    height: 18px !important;
+  }
+
+  .barcode-text {
+    font-size: 0.55rem !important;
+  }
+
+  .totals-table {
+    padding: 5px 8px !important;
+    border-radius: 4px !important;
+  }
+
+  .totals-row {
+    font-size: 0.7rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .totals-divider {
+    margin: 3px 0 !important;
+  }
+
+  .totals-row.grand-total {
+    font-size: 0.88rem !important;
+  }
+
+  .totals-row.grand-total .grand-val {
+    font-size: 1rem !important;
+  }
+
+  .invoice-sheet-footer {
+    padding-top: 3px !important;
+    font-size: 0.62rem !important;
+    border-top: 1px solid #e5e7eb !important;
   }
 }
 
@@ -1762,7 +1959,7 @@
   }
 
   .khadra-invoice-sheet {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 0.85rem;
   }
 
   .invoice-header-bar {
