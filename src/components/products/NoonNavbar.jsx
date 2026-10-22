@@ -160,20 +160,29 @@ export default function NoonNavbar({
               كل الخضروات
             </button>
 
-            {displayCategories.map((cat) => (
-              <button
-                key={cat.id}
-                className={`noon-cat-link ${
-                  currentView === "products" && selectedCategory === cat.id ? "active" : ""
-                }`}
-                onClick={() => {
-                  onSelectCategory && onSelectCategory(cat.id);
-                  onGoProducts && onGoProducts();
-                }}
-              >
-                {cat.label}
-              </button>
-            ))}
+            {displayCategories.map((cat) => {
+              const isBox = cat.id === "weekly_box";
+              const isActive = currentView === "products" && selectedCategory === cat.id;
+
+              return (
+                <button
+                  key={cat.id}
+                  className={`noon-cat-link ${isBox ? "noon-cat-link-featured" : ""} ${
+                    isActive ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    onSelectCategory && onSelectCategory(cat.id);
+                    onGoProducts && onGoProducts();
+                  }}
+                >
+                  {isBox && (
+                    <i className="fa-solid fa-box-archive" style={{ marginLeft: "5px" }}></i>
+                  )}
+                  {cat.label}
+                  {isBox && <span className="cat-special-badge">وفر 35%</span>}
+                </button>
+              );
+            })}
           </div>
 
           <div className="noon-express-promo">
@@ -289,22 +298,35 @@ export default function NoonNavbar({
                 <i className="fa-solid fa-chevron-left arrow-icon"></i>
               </button>
 
-              {displayCategories.map((cat) => (
-                <button
-                  key={cat.id}
-                  className={`drawer-cat-item ${
-                    currentView === "products" && selectedCategory === cat.id ? "active" : ""
-                  }`}
-                  onClick={() => {
-                    onSelectCategory(cat.id);
-                    onGoProducts && onGoProducts();
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  <span className="cat-name">{cat.label}</span>
-                  <i className="fa-solid fa-chevron-left arrow-icon"></i>
-                </button>
-              ))}
+              {displayCategories.map((cat) => {
+                const isBox = cat.id === "weekly_box";
+                const isActive = currentView === "products" && selectedCategory === cat.id;
+
+                return (
+                  <button
+                    key={cat.id}
+                    className={`drawer-cat-item ${isBox ? "drawer-cat-item-featured" : ""} ${
+                      isActive ? "active" : ""
+                    }`}
+                    onClick={() => {
+                      onSelectCategory(cat.id);
+                      onGoProducts && onGoProducts();
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      {isBox ? (
+                        <i className="fa-solid fa-box-archive" style={{ color: "#d97706" }}></i>
+                      ) : (
+                        <span style={{ width: 4 }} />
+                      )}
+                      <span className="cat-name">{cat.label}</span>
+                      {isBox && <span className="drawer-special-tag">توفير عائلي</span>}
+                    </div>
+                    <i className="fa-solid fa-chevron-left arrow-icon"></i>
+                  </button>
+                );
+              })}
             </nav>
 
             {/* Quick Features */}

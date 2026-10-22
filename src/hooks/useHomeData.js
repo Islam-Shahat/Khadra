@@ -66,14 +66,6 @@ const CATEGORIES_DATA = [
     textColor: "#ffffff",
   },
   {
-    id: "weekly_box",
-    name: "البوكس الأسبوعي",
-    icon: "fa-solid fa-box-archive",
-    badge: "توفير البيت",
-    color: "#fef3c7",
-    textColor: "#92400e",
-  },
-  {
     id: "fruity",
     name: "طماطم وخيار وفلفل",
     icon: "fa-solid fa-apple-whole",
@@ -104,6 +96,14 @@ const CATEGORIES_DATA = [
     badge: "طبيعي 100%",
     color: "#e0f2f1",
     textColor: "#1b5e20",
+  },
+  {
+    id: "weekly_box",
+    name: "البوكس الأسبوعي",
+    icon: "fa-solid fa-box-archive",
+    badge: "وفر حتى 35%",
+    color: "#fef3c7",
+    textColor: "#92400e",
   },
 ];
 

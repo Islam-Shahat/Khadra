@@ -192,22 +192,27 @@ export default function HomePage({
         </div>
 
         <div className="home-categories-grid">
-          {categories.map((cat) => (
-            <div
-              key={cat.id}
-              className="home-category-bubble"
-              onClick={() => handleCategoryClick(cat.id)}
-            >
+          {categories.map((cat) => {
+            const isBox = cat.id === "weekly_box";
+            return (
               <div
-                className="category-circle"
-                style={{ backgroundColor: cat.color, color: cat.textColor }}
+                key={cat.id}
+                className={`home-category-bubble ${isBox ? "bubble-featured" : ""}`}
+                onClick={() => handleCategoryClick(cat.id)}
               >
-                <i className={cat.icon}></i>
+                <div
+                  className={`category-circle ${isBox ? "category-circle-featured" : ""}`}
+                  style={{ backgroundColor: cat.color, color: cat.textColor }}
+                >
+                  <i className={cat.icon}></i>
+                </div>
+                <span className="category-bubble-title">{cat.name}</span>
+                <span className={`category-bubble-badge ${isBox ? "badge-featured" : ""}`}>
+                  {cat.badge}
+                </span>
               </div>
-              <span className="category-bubble-title">{cat.name}</span>
-              <span className="category-bubble-badge">{cat.badge}</span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

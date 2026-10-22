@@ -625,11 +625,11 @@ export const VEGETABLES_DATABASE = [
 // تصنيفات الخضروات لمتجر خضرة
 export const VEGETABLE_CATEGORIES = [
   { id: "all", label: "كل الخضروات", name: "كل الخضروات", icon: "fa-solid fa-seedling" },
-  { id: "weekly_box", label: "البوكس الأسبوعي", name: "البوكس الأسبوعي", icon: "fa-solid fa-box-archive" },
   { id: "fruity", label: "طماطم وخيار وفلفل", name: "خضروات ثمرية", icon: "fa-solid fa-apple-whole" },
   { id: "leafy", label: "ورقيات طازجة", name: "ورقيات وسلطة", icon: "fa-solid fa-leaf" },
   { id: "roots", label: "بطاطس وبصل وجزر", name: "جذور ودرنات", icon: "fa-solid fa-carrot" },
   { id: "organic", label: "عضوي ومميز", name: "عضوي ومميز", icon: "fa-solid fa-box-open" },
+  { id: "weekly_box", label: "البوكس الأسبوعي", name: "البوكس الأسبوعي", icon: "fa-solid fa-box-archive" },
 ];
 
 /**
