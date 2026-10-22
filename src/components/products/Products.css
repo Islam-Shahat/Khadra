@@ -361,50 +361,48 @@
   color: #ffffff;
 }
 
-/* Featured Distinction for Weekly Box Category */
+/* Featured Distinction for Weekly Box Category - Permanently Fixed Style */
 .noon-cat-link.noon-cat-link-featured {
-  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-  color: #92400e;
-  border: 1.5px solid #fcd34d;
+  background: linear-gradient(135deg, #29572C 0%, #1e3f20 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #8DA432 !important;
   font-weight: 800;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  box-shadow: 0 1px 4px rgba(217, 119, 6, 0.1);
+  box-shadow: 0 2px 6px rgba(41, 87, 44, 0.25);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .noon-cat-link.noon-cat-link-featured:hover {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  color: #78350f;
-  border-color: #f59e0b;
+  background: linear-gradient(135deg, #326b36 0%, #244c27 100%) !important;
+  color: #ffffff !important;
+  border-color: #a3bd3d !important;
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(217, 119, 6, 0.18);
+  box-shadow: 0 4px 10px rgba(41, 87, 44, 0.35);
 }
 
 .noon-cat-link.noon-cat-link-featured.active {
-  background: linear-gradient(135deg, #29572C 0%, #1e3f20 100%) !important;
+  background: linear-gradient(135deg, #214b24 0%, #153117 100%) !important;
   color: #ffffff !important;
-  border-color: #8DA432 !important;
-  box-shadow: 0 3px 10px rgba(41, 87, 44, 0.3) !important;
+  border-color: #a3bd3d !important;
+  box-shadow: 0 3px 10px rgba(41, 87, 44, 0.4), 0 0 0 2px rgba(141, 164, 50, 0.35) !important;
 }
 
-.cat-special-badge {
-  background: #ea580c;
-  color: #ffffff;
+.noon-cat-link.noon-cat-link-featured .cat-special-badge {
+  background: #facc15 !important;
+  color: #1f2937 !important;
   font-size: 0.65rem;
   font-weight: 800;
-  padding: 0.1rem 0.45rem;
+  padding: 0.12rem 0.48rem;
   border-radius: 9999px;
   margin-right: 0.3rem;
   letter-spacing: -0.2px;
-  box-shadow: 0 1px 3px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.noon-cat-link.noon-cat-link-featured.active .cat-special-badge {
-  background: #facc15;
-  color: #1f2937;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+.noon-cat-link.noon-cat-link-featured:hover .cat-special-badge {
+  background: #fde047 !important;
 }
 
 /* Mobile Drawer Featured Box Item */
@@ -2499,16 +2497,17 @@
   }
 
   .noon-cat-link.noon-cat-link-featured {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border: 1.5px solid #fcd34d !important;
+    background: linear-gradient(135deg, #29572C 0%, #1e3f20 100%) !important;
+    color: #ffffff !important;
+    border: 1.5px solid #8DA432 !important;
     font-weight: 800 !important;
+    box-shadow: 0 2px 6px rgba(41, 87, 44, 0.25) !important;
   }
 
   .noon-cat-link.noon-cat-link-featured.active {
-    background: #29572C !important;
+    background: linear-gradient(135deg, #214b24 0%, #153117 100%) !important;
     color: #ffffff !important;
-    border-color: #8DA432 !important;
+    border-color: #a3bd3d !important;
   }
 
   .noon-cat-lead-icon {
