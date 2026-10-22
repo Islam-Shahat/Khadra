@@ -31,6 +31,8 @@ export default function ProductsPage({
       return `نتائج البحث عن: "${searchQuery}"`;
     }
     switch (selectedCategory) {
+      case "weekly_box":
+        return "قسم البوكس الأسبوعي ومستلزمات البيت";
       case "fruity":
         return "قسم الخضروات الثمرية (طماطم، خيار، فلفل)";
       case "leafy":
@@ -38,7 +40,7 @@ export default function ProductsPage({
       case "roots":
         return "قسم الجذور والدرنات (بطاطس، بصل، جزر)";
       case "organic":
-        return "قسم الخضار العضوي وبكجات التوفير";
+        return "قسم الخضار العضوي والمميز";
       default:
         return "جميع الخضروات الطازجة في خضرة (KHADRA)";
     }

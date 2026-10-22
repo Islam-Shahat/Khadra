@@ -138,7 +138,7 @@ export default function HomePage({
             {/* Side Card 1: Family Vegetable Box Deal */}
             <div
               className="hero-promo-card deal-of-day"
-              onClick={() => handleCategoryClick("organic")}
+              onClick={() => handleCategoryClick("weekly_box")}
             >
               <div className="promo-card-badge">عرض الأسبوع العائلي</div>
               <div className="promo-card-body">
@@ -149,7 +149,7 @@ export default function HomePage({
                 </span>
               </div>
               <div className="promo-card-icon-bg">
-                <i className="fa-solid fa-box-open"></i>
+                <i className="fa-solid fa-box-archive"></i>
               </div>
             </div>
 
