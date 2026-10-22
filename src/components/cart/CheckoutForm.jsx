@@ -95,7 +95,7 @@ export default function CheckoutForm({
     } else {
       const cleanPhone = formData.phone.trim().replace(/\s+/g, "");
       if (!/^01[0125][0-9]{8}$/.test(cleanPhone) && cleanPhone.length < 10) {
-        newErrors.phone = "يرجى كتابة رقم هاتف مصري صحيح (مثال: 01012345678)";
+        newErrors.phone = "يرجى كتابة رقم هاتف مصري صحيح (مثال: 01557523934)";
       }
     }
 
@@ -191,7 +191,7 @@ export default function CheckoutForm({
                     id="fullName"
                     name="fullName"
                     type="text"
-                    placeholder="مثال: أحمد محمد علي"
+                    placeholder="إسلام شحات رسلي"
                     value={formData.fullName}
                     onChange={handleChange}
                     className={`form-input ${errors.fullName ? "is-invalid" : ""}`}
@@ -211,7 +211,7 @@ export default function CheckoutForm({
                     id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="01012345678"
+                    placeholder="01557523934"
                     value={formData.phone}
                     onChange={handleChange}
                     dir="ltr"
