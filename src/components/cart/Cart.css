@@ -1932,43 +1932,328 @@
   }
 }
 
-/* Mobile Responsive */
+/* Step label desktop vs mobile */
+.step-label-desktop {
+  display: inline;
+}
+
+.step-label-mobile {
+  display: none;
+}
+
+/* ==========================================================================
+   Mobile Responsive Styles (Screen width <= 768px & Phones)
+   ========================================================================== */
 @media (max-width: 768px) {
+  /* Toggle Step Labels */
+  .step-label-desktop {
+    display: none !important;
+  }
+
+  .step-label-mobile {
+    display: inline !important;
+  }
+
+  /* Page Wrapper on Mobile */
+  .esoo-cart-page-wrapper {
+    padding: 0.65rem 0.5rem 2rem 0.5rem !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .esoo-cart-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .checkout-page-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Stepper on Mobile: Ultra-Compact & Clean */
+  .cart-checkout-stepper {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0.45rem 0.65rem !important;
+    margin: 0.25rem 0 1rem 0 !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .stepper-node {
+    gap: 0.35rem !important;
+    font-size: 0.76rem !important;
+  }
+
+  .step-circle {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 0.72rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .step-name {
+    font-size: 0.76rem !important;
+    white-space: nowrap !important;
+  }
+
+  .stepper-connector {
+    margin: 0 0.35rem !important;
+    height: 2px !important;
+  }
+
+  /* Checkout Top Header on Mobile */
+  .checkout-top-header {
+    flex-direction: column-reverse !important;
+    align-items: stretch !important;
+    gap: 0.55rem !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.65rem !important;
+  }
+
+  .cart-back-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.65rem 1rem !important;
+  }
+
+  .checkout-badge-secure {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.75rem !important;
+    padding: 0.45rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Checkout Grid on Mobile: Strict 100% */
   .checkout-main-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100% !important;
+    gap: 1.15rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
+  .checkout-form-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 1rem !important;
+  }
+
+  /* Checkout Card on Mobile */
+  .checkout-card {
+    padding: 1.15rem 0.85rem !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .checkout-card-header {
+    gap: 0.65rem !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  .card-step-badge {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.95rem !important;
+    border-radius: 8px !important;
+  }
+
+  .checkout-card-title {
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .checkout-card-subtitle {
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Fields on Mobile: Strictly 1 column */
   .checkout-fields-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100% !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
   }
 
-  .col-span-1, .col-span-2 {
-    grid-column: span 1;
+  .col-span-1,
+  .col-span-2 {
+    grid-column: span 1 !important;
+    width: 100% !important;
   }
 
+  .form-group {
+    width: 100% !important;
+  }
+
+  .input-icon-wrapper {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .form-input {
+    width: 100% !important;
+    font-size: 0.88rem !important;
+    padding: 0.65rem 2.4rem 0.65rem 0.85rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Delivery Time Options: Strictly Single Column on Mobile */
   .delivery-time-options {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100% !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
   }
 
-  .invoice-details-grid {
-    grid-template-columns: 1fr;
+  .delivery-time-radio-card {
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.78rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
   }
 
-  .invoice-bottom-section {
-    grid-template-columns: 1fr;
+  /* Payment Methods on Mobile */
+  .payment-methods-list {
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+
+  .payment-method-card {
+    padding: 0.85rem 0.75rem !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .payment-card-right {
+    gap: 0.65rem !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .payment-icon-box {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1.05rem !important;
+    border-radius: 8px !important;
+  }
+
+  .payment-title {
+    font-size: 0.86rem !important;
+  }
+
+  .payment-badge {
+    font-size: 0.65rem !important;
+  }
+
+  .payment-desc {
+    font-size: 0.74rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .payment-check-circle {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Summary Sidebar on Mobile */
+  .checkout-summary-sidebar {
+    position: static !important;
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .checkout-summary-card {
+    padding: 1.15rem 0.85rem !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .checkout-place-order-btn {
+    padding: 0.85rem !important;
+    font-size: 0.98rem !important;
+  }
+
+  /* Receipt / Invoice on Mobile */
+  .receipt-screen-actions {
+    padding: 1rem 0.85rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+  }
+
+  .receipt-success-badge {
+    gap: 0.75rem !important;
+  }
+
+  .success-icon-pulse {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.5rem !important;
+  }
+
+  .receipt-success-title {
+    font-size: 1.15rem !important;
+  }
+
+  .receipt-success-subtitle {
+    font-size: 0.78rem !important;
+  }
+
+  .receipt-btns-group {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .receipt-print-btn,
+  .receipt-continue-btn {
+    width: 100% !important;
+    justify-content: center !important;
   }
 
   .khadra-invoice-sheet {
-    padding: 1.25rem 0.85rem;
+    padding: 1.15rem 0.75rem !important;
+    border-radius: 8px !important;
+    overflow-x: hidden !important;
   }
 
   .invoice-header-bar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
   }
 
   .invoice-meta-col {
-    align-items: flex-start;
-    text-align: right;
+    align-items: flex-start !important;
+    text-align: right !important;
+    width: 100% !important;
+  }
+
+  .invoice-details-grid {
+    grid-template-columns: 100% !important;
+    gap: 0.65rem !important;
+  }
+
+  .invoice-bottom-section {
+    grid-template-columns: 100% !important;
+    gap: 1rem !important;
   }
 }

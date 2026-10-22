@@ -95,7 +95,10 @@ export default function CartPage({
               <div className="step-circle">
                 {currentStep === "cart" ? "1" : <i className="fa-solid fa-check"></i>}
               </div>
-              <span className="step-name">سلة المشتريات</span>
+              <span className="step-name">
+                <span className="step-label-desktop">سلة المشتريات</span>
+                <span className="step-label-mobile">السلة</span>
+              </span>
             </div>
 
             <div className={`stepper-connector ${currentStep !== "cart" ? "completed" : ""}`}></div>
@@ -110,7 +113,10 @@ export default function CartPage({
               <div className="step-circle">
                 {currentStep === "receipt" ? <i className="fa-solid fa-check"></i> : "2"}
               </div>
-              <span className="step-name">إتمام الشراء والشحن</span>
+              <span className="step-name">
+                <span className="step-label-desktop">إتمام الشراء والشحن</span>
+                <span className="step-label-mobile">الشحن</span>
+              </span>
             </div>
 
             <div className={`stepper-connector ${currentStep === "receipt" ? "completed" : ""}`}></div>
@@ -119,7 +125,10 @@ export default function CartPage({
               <div className="step-circle">
                 <i className="fa-solid fa-receipt"></i>
               </div>
-              <span className="step-name">الفاتورة وتأكيد الطلب</span>
+              <span className="step-name">
+                <span className="step-label-desktop">الفاتورة وتأكيد الطلب</span>
+                <span className="step-label-mobile">الفاتورة</span>
+              </span>
             </div>
           </div>
         )}
