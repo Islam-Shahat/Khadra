@@ -1,0 +1,6 @@
+# Robots.txt for KHADRA (خضرة / خضرا)
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://khadra.vercel.app/sitemap.xml

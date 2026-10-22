@@ -1,14 +1,134 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/khadra-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>KHADRA | خضرة — من قلب المزرعة لبيتك</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Primary Title (Optimized for both "خضرة" and "خضرا" and "KHADRA") -->
+    <title>خضرة | KHADRA — أفضل متجر خضروات وفواكه طازجة وعضوية من المزرعة لبيتك | خضرا</title>
+
+    <!-- Meta Description & Keywords -->
+    <meta
+      name="description"
+      content="تسوق الآن من متجر خضرة (خضرا - KHADRA) أول وأفضل منصة لشراء الخضروات العضوية والطازجة المقطوفة فجراً مباشرة من قلب المزارع إلى باب بيتك بأفضل الأسعار، عروض أسبوعية وتوصيل فوري سريع."
+    />
+    <meta
+      name="keywords"
+      content="خضرا, خضرة, متجر خضرا, متجر خضرة, موقع خضرا, موقع خضرة, خضار طازج, خضار اون لاين, طلب خضار اونلاين, خضار وفواكه طازجة, خضروات عضوية, بوكس الخضار الأسبوعي, شراء خضار بالنت, توصيل خضار القاهرة, توصيل خضار الجيزة, خضروات مزارع, KHADRA, khadra store, khudra, khadra farm"
+    />
+    <meta name="author" content="خضرة - KHADRA Farm" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://khadra.vercel.app/" />
+
+    <!-- Theme Color & Mobile Settings -->
+    <meta name="theme-color" content="#29572C" />
+    <meta name="msapplication-navbutton-color" content="#29572C" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#29572C" />
+    <meta name="application-name" content="خضرة | KHADRA" />
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="/khadra-logo.png" />
+    <link rel="apple-touch-icon" href="/khadra-logo.png" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn, Telegram) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://khadra.vercel.app/" />
+    <meta property="og:title" content="خضرة | KHADRA — خضروات طازجة 100% من قلب المزرعة لبيتك | خضرا" />
+    <meta
+      property="og:description"
+      content="اطلب خضارك اليومي طازجاً ومقطوفاً فجراً من مزارع خضرة. جودة استثنائية، أسعار لا تقارن، وتوصيل إكسبريس حتى باب بيتك."
+    />
+    <meta property="og:image" content="https://khadra.vercel.app/khadra-logo.png" />
+    <meta property="og:image:alt" content="شعار متجر خضرة الرسمي KHADRA" />
+    <meta property="og:site_name" content="خضرة | KHADRA" />
+    <meta property="og:locale" content="ar_EG" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://khadra.vercel.app/" />
+    <meta name="twitter:title" content="خضرة | KHADRA — أفضل خضروات طازجة وعضوية | خضرا" />
+    <meta
+      name="twitter:description"
+      content="تسوق الخضروات الورقية، الطماطم، الخيار، والبوكسات الأسبوعية التوفيرية مباشرة من مزارع خضرة لبيتك."
+    />
+    <meta name="twitter:image" content="https://khadra.vercel.app/khadra-logo.png" />
+
+    <!-- Fonts & Icons Preconnect for High Core Web Vitals (Speed & Performance SEO) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Structured Data: Schema.org (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://khadra.vercel.app/#website",
+            "url": "https://khadra.vercel.app/",
+            "name": "خضرة | KHADRA",
+            "alternateName": ["خضرا", "متجر خضرا", "متجر خضرة", "Khadra Farm"],
+            "description": "منصة متخصصة في بيع وتوصيل الخضروات والفواكه الطازجة والعضوية من المزارع إلى المنازل مباشرة.",
+            "inLanguage": "ar"
+          },
+          {
+            "@type": "GroceryStore",
+            "@id": "https://khadra.vercel.app/#store",
+            "name": "خضرة | KHADRA",
+            "alternateName": "خضرا",
+            "image": "https://khadra.vercel.app/khadra-logo.png",
+            "logo": "https://khadra.vercel.app/khadra-logo.png",
+            "url": "https://khadra.vercel.app/",
+            "telephone": "+201012345678",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "طريق مصر الإسكندرية الزراعي",
+              "addressLocality": "القاهرة",
+              "addressRegion": "القاهرة",
+              "postalCode": "11511",
+              "addressCountry": "EG"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 30.0444,
+              "longitude": 31.2357
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "07:00",
+                "closes": "23:00"
+              }
+            ],
+            "servesCuisine": "Organic Vegetables & Fresh Farm Produce",
+            "currenciesAccepted": "EGP",
+            "paymentAccepted": "Cash, Credit Card, Vodafone Cash, InstaPay"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
