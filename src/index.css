@@ -1,0 +1,108 @@
+/* Base Design System - KHADRA Organic Farm Palette */
+:root {
+  --bg-app: #f5f3ee;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #faf8f4;
+  --bg-surface-tint: #f0ece3;
+
+  /* Typography Colors */
+  --text-primary: #1e2022;
+  --text-secondary: #575e65;
+  --text-muted: #858e96;
+  --text-inverted: #ffffff;
+
+  /* Primary: Deep Forest Green */
+  --khadra-primary: #29572C;
+  --khadra-primary-hover: #1f4422;
+  --khadra-primary-active: #183618;
+  --khadra-primary-soft: #e8f0e8;
+  --khadra-primary-border: #b5d1b7;
+
+  /* Secondary: Olive Dark */
+  --khadra-olive: #365006;
+  --khadra-olive-hover: #2a3f04;
+  --khadra-olive-soft: #ecf0e2;
+  --khadra-olive-border: #c5d4a0;
+
+  /* Accent: Lime Green */
+  --khadra-lime: #8DA432;
+  --khadra-lime-hover: #7a9128;
+  --khadra-lime-soft: #f2f6e6;
+  --khadra-lime-border: #d4e2a3;
+
+  /* Warm Accent: Gold/Brown */
+  --khadra-gold: #925E08;
+  --khadra-gold-hover: #7d5007;
+  --khadra-gold-soft: #f8f0e2;
+  --khadra-gold-border: #e5cfa0;
+
+  /* Neutral: Tan/Beige */
+  --khadra-beige: #D6B98F;
+  --khadra-beige-light: #efe4d3;
+  --khadra-beige-border: #d1c0a0;
+
+  /* Neutral Borders & Dividers */
+  --border-light: #e5e0d5;
+  --border-base: #d9d2c5;
+  --border-strong: #c0b8a8;
+
+  /* Status Colors */
+  --danger: #b92b27;
+  --danger-soft: #fbf0ef;
+  --danger-border: #f5c4c2;
+  --warning: #925E08;
+  --warning-soft: #f8f0e2;
+
+  /* Shadows - Organic and soft */
+  --shadow-sm: 0 1px 2px rgba(41, 87, 44, 0.05);
+  --shadow-md: 0 4px 12px rgba(41, 87, 44, 0.07), 0 1px 2px rgba(41, 87, 44, 0.04);
+  --shadow-lg: 0 12px 28px rgba(41, 87, 44, 0.09), 0 2px 4px rgba(41, 87, 44, 0.05);
+
+  /* Fonts */
+  --font-sans: 'PT Sans', 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-arabic: 'Cairo', 'PT Sans', system-ui, sans-serif;
+  --font-mono: 'PT Sans', ui-monospace, monospace;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}

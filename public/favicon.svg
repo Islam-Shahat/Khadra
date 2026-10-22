@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 38 38" fill="none">
+  <!-- KHADRA Forest Green Rounded Badge -->
+  <rect width="38" height="38" rx="10" fill="#29572C" />
+  <!-- Leaf Stem & Veins in Lime Green -->
+  <path
+    d="M10 28C10 28 13 22 20 18C25 15 28 10 28 10C28 10 27 16 23 20C18 24 14 26 10 28Z"
+    fill="#8DA432"
+  />
+  <!-- Overlapping Leaf in Tan/Beige -->
+  <path
+    d="M18 24C18 24 21 21 26 20C28.5 19.5 30 17 30 17C30 17 28.5 21 25.5 23C22 25.5 20 26 18 24Z"
+    fill="#D6B98F"
+  />
+  <circle cx="13" cy="25" r="2.5" fill="#D6B98F" />
+</svg>

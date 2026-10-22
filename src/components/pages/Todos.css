@@ -1,0 +1,91 @@
+.todo-page {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.todo-page h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.todo-add-form,
+.todo-edit-form {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-add-form {
+  margin-bottom: 16px;
+}
+
+.todo-add-form input,
+.todo-edit-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font: inherit;
+}
+
+.todo-page button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 5px;
+  background: #e5e5e5;
+  cursor: pointer;
+}
+
+.todo-page button:hover {
+  background: #d5d5d5;
+}
+
+.todo-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.todo-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 55px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.todo-title {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.todo-card input {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.todo-edit-form {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.todo-done span {
+  color: #777;
+  text-decoration: line-through;
+}
+
+@media (max-width: 500px) {
+  .todo-cards {
+    grid-template-columns: 1fr;
+  }
+}

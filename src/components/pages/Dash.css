@@ -1,0 +1,75 @@
+.ham {
+  font-size: 28px;
+}
+
+.menu-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  border: 0;
+  background: rgb(14, 201, 14);
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  padding-top: 20px;
+  background: red;
+  border-radius: 0 10px 10px 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  color: white;
+}
+
+.close-button {
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: darkred;
+}
+
+.logout {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+}
+
+.logout-button {
+  position: static;
+  border: 0;
+  background: rgb(245, 47, 8);
+  color: white;
+  padding: 6px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
