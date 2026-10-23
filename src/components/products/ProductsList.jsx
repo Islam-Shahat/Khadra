@@ -375,7 +375,7 @@ export default function ProductsList() {
             </div>
             <div>
               <strong>توصيل خضرة إكسبريس (KHADRA Express)</strong>
-              <p>من قلب المزرعة لبيتك فائق السرعة</p>
+              <p>من قلب المزرعة لبيتك فائق السرعة خلال 40 - 50 دقيقة</p>
             </div>
           </div>
 
@@ -385,7 +385,7 @@ export default function ProductsList() {
             </div>
             <div>
               <strong>إرجاع سهل ومجاني</strong>
-              <p>إمكانية الإرجاع خلال 14 يوماً بكل سهولة</p>
+              <p>إمكانية الإرجاع خلال 40 - 50 دقيقة بكل سهولة</p>
             </div>
           </div>
         </div>

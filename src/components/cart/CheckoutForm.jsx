@@ -22,7 +22,7 @@ const EGYPT_GOVERNORATES = [
 ];
 
 const DELIVERY_TIMES = [
-  { id: "asap", label: "في أقرب وقت ممكن (شحن فوري خلال 60-90 دقيقة)", icon: "fa-solid fa-bolt" },
+  { id: "asap", label: "في أقرب وقت ممكن (شحن فوري خلال 40 - 50 دقيقة)", icon: "fa-solid fa-bolt" },
   { id: "morning", label: "الفترة الصباحية (9:00 ص - 1:00 ظهراً)", icon: "fa-solid fa-sun" },
   { id: "afternoon", label: "فترة الظهيرة (2:00 ظ - 6:00 مساءً)", icon: "fa-solid fa-cloud-sun" },
   { id: "evening", label: "الفترة المسائية (7:00 م - 10:00 مساءً)", icon: "fa-solid fa-moon" },

@@ -345,7 +345,7 @@ export default function NoonNavbar({
               </div>
               <div className="drawer-feat-item">
                 <i className="fa-solid fa-arrow-rotate-left" style={{ color: "#3b82f6" }}></i>
-                <span>إرجاع سهل ومجاني خلال 14 يوماً</span>
+                <span>إرجاع سهل ومجاني خلال 40 - 50 دقيقة</span>
               </div>
             </div>
           </aside>

@@ -177,7 +177,7 @@ export default function ProductQuickViewModal({
                 <i className="fa-solid fa-arrow-rotate-left"></i>
                 <div>
                   <strong>إرجاع واستبدال مجاني</strong>
-                  <p>خلال 14 يوماً بكل سهولة</p>
+                  <p>خلال 40 - 50 دقيقة بكل سهولة</p>
                 </div>
               </div>
             </div>
