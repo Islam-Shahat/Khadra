@@ -9,6 +9,7 @@ import CartPage from "../cart/CartPage";
 import WishlistPage from "../wishlist/WishlistPage";
 import HomePage from "../home/HomePage";
 import ProductsPage from "./ProductsPage";
+import AboutPage from "../about/AboutPage";
 import FloatingCouponPopup from "../common/FloatingCouponPopup";
 import { fetchVegetablesAPI, VEGETABLE_CATEGORIES } from "../../data/vegetablesData";
 import "./Products.css";
@@ -251,6 +252,10 @@ export default function ProductsList() {
           setCurrentView("products");
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
+        onGoAbout={() => {
+          setCurrentView("about");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       />
 
       {/* 2. SPA View Routing */}
@@ -297,6 +302,18 @@ export default function ProductsList() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           onQuickView={(p) => setQuickViewProduct(p)}
+        />
+      ) : currentView === "about" ? (
+        /* Comprehensive About Page (من نحن، التعريف الشخصي، المميزات، والأسئلة الشائعة) */
+        <AboutPage
+          onNavigateToProducts={() => {
+            setCurrentView("products");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          onNavigateToHome={() => {
+            setCurrentView("home");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
         />
       ) : (
         /* Products Catalog Page View (Independent SPA Page) */
@@ -388,6 +405,71 @@ export default function ProductsList() {
               <p>إمكانية الإرجاع خلال 40 - 50 دقيقة بكل سهولة</p>
             </div>
           </div>
+        </div>
+
+        {/* Quick Footer Navigation Links */}
+        <div className="noon-footer-nav-links">
+          <button
+            className="footer-link-btn"
+            onClick={() => {
+              setCurrentView("home");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            الرئيسية
+          </button>
+          <span className="footer-link-sep">•</span>
+          <button
+            className="footer-link-btn"
+            onClick={() => {
+              setCurrentView("products");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            كل المنتجات
+          </button>
+          <span className="footer-link-sep">•</span>
+          <button
+            className="footer-link-btn"
+            onClick={() => {
+              setCurrentView("about");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            من نحن (قصة خضرة & المؤسس)
+          </button>
+          <span className="footer-link-sep">•</span>
+          <button
+            className="footer-link-btn"
+            onClick={() => {
+              setCurrentView("about");
+              setTimeout(() => {
+                document.getElementById("faq-section")?.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
+          >
+            الأسئلة الشائعة (FAQ)
+          </button>
+          <span className="footer-link-sep">•</span>
+          <button
+            className="footer-link-btn"
+            onClick={() => {
+              setCurrentView("cart");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            عربة التسوق
+          </button>
+          <span className="footer-link-sep">•</span>
+          <button
+            className="footer-link-btn"
+            onClick={() => {
+              setCurrentView("wishlist");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            قائمة المفضلة
+          </button>
         </div>
 
         <div className="noon-footer-bottom">

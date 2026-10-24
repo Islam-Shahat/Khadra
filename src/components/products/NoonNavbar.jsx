@@ -14,6 +14,7 @@ export default function NoonNavbar({
   onOpenWishlist,
   onGoHome,
   onGoProducts,
+  onGoAbout,
   currentView = "home",
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -89,12 +90,22 @@ export default function NoonNavbar({
             )}
           </div>
 
-          {/* 4. User, Wishlist & Cart Actions (Left in RTL) */}
+          {/* 4. User, About, Wishlist & Cart Actions (Left in RTL) */}
           <div className="noon-user-actions">
             {/* User Login */}
             <button className="noon-action-btn" title="تسجيل الدخول">
               <i className="fa-regular fa-user action-icon"></i>
               <span className="action-text">دخول</span>
+            </button>
+
+            {/* About Us (من نحن) beside Login & Wishlist */}
+            <button
+              className={`noon-action-btn noon-about-nav-btn ${currentView === "about" ? "active" : ""}`}
+              onClick={onGoAbout}
+              title="من نحن والمميزات والأسئلة الشائعة"
+            >
+              <i className="fa-solid fa-circle-info action-icon"></i>
+              <span className="action-text">من نحن</span>
             </button>
 
             {/* Wishlist / Favorites */}
@@ -294,6 +305,20 @@ export default function NoonNavbar({
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                   <i className="fa-solid fa-seedling" style={{ color: "#29572C" }}></i>
                   <span className="cat-name">كل الخضروات</span>
+                </div>
+                <i className="fa-solid fa-chevron-left arrow-icon"></i>
+              </button>
+
+              <button
+                className={`drawer-cat-item ${currentView === "about" ? "active" : ""}`}
+                onClick={() => {
+                  onGoAbout && onGoAbout();
+                  setIsMenuOpen(false);
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <i className="fa-solid fa-circle-info" style={{ color: "#8DA432" }}></i>
+                  <span className="cat-name">من نحن (عن خضرة والمؤسس)</span>
                 </div>
                 <i className="fa-solid fa-chevron-left arrow-icon"></i>
               </button>
