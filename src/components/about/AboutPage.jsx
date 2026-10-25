@@ -2,33 +2,17 @@ import { useState, useMemo, useRef } from "react";
 import "./AboutPage.css";
 
 export default function AboutPage({ onNavigateToProducts, onNavigateToHome }) {
-  // Video Player & File Input Ref
-  const fileInputRef = useRef(null);
+  // Video Player Ref
   const videoRef = useRef(null);
-  const [videoSrc, setVideoSrc] = useState("/videos/about-video.mp4");
+  const [videoSrc] = useState("/videos/about-video.mp4");
   const [videoError, setVideoError] = useState(false);
-  const [videoName, setVideoName] = useState(() => {
+  const [videoName] = useState(() => {
     try {
       return localStorage.getItem("khadra_about_video_name") || "khadraWeb#1080.mp4";
     } catch {
       return "khadraWeb#1080.mp4";
     }
   });
-
-  const handleVideoUpload = (e) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const objectUrl = URL.createObjectURL(file);
-      setVideoSrc(objectUrl);
-      setVideoError(false);
-      setVideoName(file.name);
-      try {
-        localStorage.setItem("khadra_about_video_name", file.name);
-      } catch (err) {
-        console.warn("Storage warning", err);
-      }
-    }
-  };
 
   // FAQ Active Accordion Item (-1 means none or start with first one open)
   const [activeFaq, setActiveFaq] = useState(0);
@@ -271,16 +255,6 @@ export default function AboutPage({ onNavigateToProducts, onNavigateToHome }) {
                   <i className="fa-solid fa-play"></i>
                   <span>فيديو تعريفي عن خضرة</span>
                 </div>
-
-                <button
-                  type="button"
-                  className="video-upload-trigger-btn"
-                  onClick={() => fileInputRef.current?.click()}
-                  title="رفع أو اختيار فيديو من جهازك"
-                >
-                  <i className="fa-solid fa-cloud-arrow-up"></i>
-                  <span>{videoName ? "تغيير الفيديو" : "رفع فيديو"}</span>
-                </button>
               </div>
 
               {/* Video Player Display */}
@@ -308,11 +282,8 @@ export default function AboutPage({ onNavigateToProducts, onNavigateToHome }) {
                   )}
                 </div>
               ) : (
-                /* Fallback & Upload Trigger when video file not placed yet */
-                <div
-                  className="hero-video-placeholder"
-                  onClick={() => fileInputRef.current?.click()}
-                >
+                /* Fallback when video file not loaded */
+                <div className="hero-video-placeholder">
                   <div className="video-play-pulse-circle">
                     <i className="fa-solid fa-play"></i>
                   </div>
@@ -320,31 +291,8 @@ export default function AboutPage({ onNavigateToProducts, onNavigateToHome }) {
                   <p className="placeholder-sub">
                     شاهد رحلة الحصاد الفجري وجودة التغليف من قلب المزرعة
                   </p>
-                  <button
-                    type="button"
-                    className="upload-video-action-btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      fileInputRef.current?.click();
-                    }}
-                  >
-                    <i className="fa-solid fa-file-video"></i>
-                    <span>اضغط لرفع فيديو من جهازك الآن</span>
-                  </button>
-                  <span className="placeholder-hint">
-                    أو ضع ملف الفيديو باسم <code>about-video.mp4</code> في مجلد <code>public/videos/</code>
-                  </span>
                 </div>
               )}
-
-              {/* Hidden file input */}
-              <input
-                type="file"
-                accept="video/*"
-                ref={fileInputRef}
-                style={{ display: "none" }}
-                onChange={handleVideoUpload}
-              />
             </div>
           </div>
         </div>
@@ -845,16 +793,16 @@ export default function AboutPage({ onNavigateToProducts, onNavigateToHome }) {
             </div>
 
             <div className="helpdesk-contact-list">
-              <a href="tel:+201012345678" className="helpdesk-item">
+              <a href="tel:+201557523934" className="helpdesk-item">
                 <i className="fa-solid fa-phone"></i>
                 <div>
                   <small>الاتصال المباشر</small>
-                  <strong>01012345678</strong>
+                  <strong>01557523934</strong>
                 </div>
               </a>
 
               <a
-                href="https://wa.me/201012345678"
+                href="https://wa.me/201557523934"
                 target="_blank"
                 rel="noreferrer"
                 className="helpdesk-item"
@@ -870,7 +818,7 @@ export default function AboutPage({ onNavigateToProducts, onNavigateToHome }) {
                 <i className="fa-solid fa-location-dot"></i>
                 <div>
                   <small>مقر التوزيع والمزارع</small>
-                  <strong>طريق مصر الإسكندرية الزراعي، القاهرة</strong>
+                  <strong>مصر - قنا - مركز قنا</strong>
                 </div>
               </div>
             </div>

@@ -247,7 +247,7 @@ export default function OrderReceipt({ order, onBackToShopping, onNewOrder }) {
         {/* Invoice Footer Notes */}
         <div className="invoice-sheet-footer">
           <p>
-            شكراً لثقتكم في خضرة — خدمة العملاء: 19842 | البريد: support@khadra.farm | القاهرة، مصر
+            شكراً لثقتكم في خضرة — خدمة العملاء: 01557523934 | البريد: support@khadra.farm | مصر - قنا - مركز قنا
           </p>
           <p className="no-print print-tip">
             <i className="fa-solid fa-circle-info"></i> نصيحة: يمكنك الضغط على زر "طباعة الفاتورة" بالأعلى لحفظ نسخة PDF أو طباعتها ورقياً.

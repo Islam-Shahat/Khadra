@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Routes, Route, useNavigate, useLocation, Navigate } from "react-router-dom";
 import NoonNavbar from "./NoonNavbar";
 import FlashDealBanner from "./FlashDealBanner";
 import ProductCard from "./ProductCard";
@@ -10,6 +11,7 @@ import WishlistPage from "../wishlist/WishlistPage";
 import HomePage from "../home/HomePage";
 import ProductsPage from "./ProductsPage";
 import AboutPage from "../about/AboutPage";
+import NotFoundPage from "../common/NotFoundPage";
 import FloatingCouponPopup from "../common/FloatingCouponPopup";
 import { fetchVegetablesAPI, VEGETABLE_CATEGORIES } from "../../data/vegetablesData";
 import "./Products.css";
@@ -17,6 +19,9 @@ import "./Products.css";
 const ITEMS_PER_PAGE = 12; // 3 rows * 4 columns = 12 products per page
 
 export default function ProductsList() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [products, setProducts] = useState([]);
   const [totalProducts, setTotalProducts] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -26,8 +31,24 @@ export default function ProductsList() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [quickViewProduct, setQuickViewProduct] = useState(null);
 
-  // View state: "home", "products", "cart", or "wishlist" (Single Page Application SPA)
-  const [currentView, setCurrentView] = useState("home");
+  // Derive currentView from react-router-dom location
+  const currentView =
+    location.pathname === "/products"
+      ? "products"
+      : location.pathname === "/cart"
+      ? "cart"
+      : location.pathname === "/wishlist"
+      ? "wishlist"
+      : location.pathname === "/about"
+      ? "about"
+      : location.pathname === "/" || location.pathname === "/home"
+      ? "home"
+      : "not-found";
+
+  const goTo = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   // Site-wide Floating Promo Coupon Popup (Dismissible with [X])
   const [isCouponPopupOpen, setIsCouponPopupOpen] = useState(true);
@@ -95,8 +116,7 @@ export default function ProductsList() {
     });
 
     if (openCart) {
-      setCurrentView("cart");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      goTo("/cart");
     }
   };
 
@@ -194,8 +214,8 @@ export default function ProductsList() {
   const handleSearchChange = (query) => {
     setSearchQuery(query);
     setCurrentPage(1);
-    if (currentView !== "products") {
-      setCurrentView("products");
+    if (location.pathname !== "/products") {
+      navigate("/products");
     }
     const timer = setTimeout(() => {
       fetchProducts(1, selectedCategory, query);
@@ -207,8 +227,8 @@ export default function ProductsList() {
   const handleCategorySelect = (catId) => {
     setSelectedCategory(catId);
     setCurrentPage(1);
-    if (currentView !== "products") {
-      setCurrentView("products");
+    if (location.pathname !== "/products") {
+      navigate("/products");
     }
   };
 
@@ -236,113 +256,126 @@ export default function ProductsList() {
         cartCount={totalCartCount}
         wishlistCount={wishlist.length}
         currentView={currentView}
-        onOpenCart={() => {
-          setCurrentView("cart");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-        onOpenWishlist={() => {
-          setCurrentView("wishlist");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-        onGoHome={() => {
-          setCurrentView("home");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-        onGoProducts={() => {
-          setCurrentView("products");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-        onGoAbout={() => {
-          setCurrentView("about");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
+        onOpenCart={() => goTo("/cart")}
+        onOpenWishlist={() => goTo("/wishlist")}
+        onGoHome={() => goTo("/")}
+        onGoProducts={() => goTo("/products")}
+        onGoAbout={() => goTo("/about")}
       />
 
-      {/* 2. SPA View Routing */}
-      {currentView === "home" ? (
-        /* Home Page with custom hook, hero slider, flash deals, categories & best sellers */
-        <HomePage
-          onNavigateToProducts={() => {
-            setCurrentView("products");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          onSelectCategory={(catId) => {
-            handleCategorySelect(catId);
-          }}
-          onAddToCart={(p) => handleAddToCart(p, 1, false)}
-          onBuyNow={(p) => handleBuyNow(p, 1)}
-          cart={cart}
-          wishlist={wishlist}
-          onToggleWishlist={handleToggleWishlist}
-          onQuickView={(p) => setQuickViewProduct(p)}
+      {/* 2. React Router View Routing */}
+      <Routes>
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+            <HomePage
+              onNavigateToProducts={() => goTo("/products")}
+              onSelectCategory={(catId) => {
+                handleCategorySelect(catId);
+                goTo("/products");
+              }}
+              onAddToCart={(p) => handleAddToCart(p, 1, false)}
+              onBuyNow={(p) => handleBuyNow(p, 1)}
+              cart={cart}
+              wishlist={wishlist}
+              onToggleWishlist={handleToggleWishlist}
+              onQuickView={(p) => setQuickViewProduct(p)}
+            />
+          }
         />
-      ) : currentView === "cart" ? (
-        /* Full Cart Page View */
-        <CartPage
-          cart={cart}
-          onUpdateQuantity={handleUpdateQuantity}
-          onRemoveItem={handleRemoveItem}
-          onClearCart={handleClearCart}
-          onBackToShopping={() => {
-            setCurrentView("products");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+        <Route path="/home" element={<Navigate to="/" replace />} />
+
+        {/* Products Catalog Page */}
+        <Route
+          path="/products"
+          element={
+            <ProductsPage
+              products={products}
+              totalProducts={totalProducts}
+              totalPages={totalPages}
+              currentPage={currentPage}
+              itemsPerPage={ITEMS_PER_PAGE}
+              loading={loading}
+              error={error}
+              searchQuery={searchQuery}
+              selectedCategory={selectedCategory}
+              onPageChange={handlePageChange}
+              onRefresh={() => fetchProducts(currentPage, selectedCategory, searchQuery)}
+              onResetSearch={() => {
+                setSearchQuery("");
+                setSelectedCategory("all");
+                fetchProducts(1, "all", "");
+              }}
+              onQuickView={(p) => setQuickViewProduct(p)}
+              onAddToCart={(p) => handleAddToCart(p, 1, false)}
+              onBuyNow={(p) => handleBuyNow(p, 1)}
+              cart={cart}
+              wishlist={wishlist}
+              onToggleWishlist={handleToggleWishlist}
+              onUpdateQuantity={handleUpdateQuantity}
+            />
+          }
         />
-      ) : currentView === "wishlist" ? (
-        /* Full Wishlist / Favorites Page View */
-        <WishlistPage
-          wishlist={wishlist}
-          cart={cart}
-          onRemoveFromWishlist={handleRemoveFromWishlist}
-          onClearWishlist={handleClearWishlist}
-          onAddToCart={(p) => handleAddToCart(p, 1, false)}
-          onBuyNow={(p) => handleBuyNow(p, 1)}
-          onBackToShopping={() => {
-            setCurrentView("products");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          onQuickView={(p) => setQuickViewProduct(p)}
+
+        {/* Cart Page */}
+        <Route
+          path="/cart"
+          element={
+            <CartPage
+              cart={cart}
+              onUpdateQuantity={handleUpdateQuantity}
+              onRemoveItem={handleRemoveItem}
+              onClearCart={handleClearCart}
+              onBackToShopping={() => goTo("/products")}
+            />
+          }
         />
-      ) : currentView === "about" ? (
-        /* Comprehensive About Page (من نحن، التعريف الشخصي، المميزات، والأسئلة الشائعة) */
-        <AboutPage
-          onNavigateToProducts={() => {
-            setCurrentView("products");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          onNavigateToHome={() => {
-            setCurrentView("home");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+
+        {/* Wishlist Page */}
+        <Route
+          path="/wishlist"
+          element={
+            <WishlistPage
+              wishlist={wishlist}
+              cart={cart}
+              onRemoveFromWishlist={handleRemoveFromWishlist}
+              onClearWishlist={handleClearWishlist}
+              onAddToCart={(p) => handleAddToCart(p, 1, false)}
+              onBuyNow={(p) => handleBuyNow(p, 1)}
+              onBackToShopping={() => goTo("/products")}
+              onQuickView={(p) => setQuickViewProduct(p)}
+            />
+          }
         />
-      ) : (
-        /* Products Catalog Page View (Independent SPA Page) */
-        <ProductsPage
-          products={products}
-          totalProducts={totalProducts}
-          totalPages={totalPages}
-          currentPage={currentPage}
-          itemsPerPage={ITEMS_PER_PAGE}
-          loading={loading}
-          error={error}
-          searchQuery={searchQuery}
-          selectedCategory={selectedCategory}
-          onPageChange={handlePageChange}
-          onRefresh={() => fetchProducts(currentPage, selectedCategory, searchQuery)}
-          onResetSearch={() => {
-            setSearchQuery("");
-            setSelectedCategory("all");
-            fetchProducts(1, "all", "");
-          }}
-          onQuickView={(p) => setQuickViewProduct(p)}
-          onAddToCart={(p) => handleAddToCart(p, 1, false)}
-          onBuyNow={(p) => handleBuyNow(p, 1)}
-          cart={cart}
-          wishlist={wishlist}
-          onToggleWishlist={handleToggleWishlist}
-          onUpdateQuantity={handleUpdateQuantity}
+
+        {/* About Page */}
+        <Route
+          path="/about"
+          element={
+            <AboutPage
+              onNavigateToProducts={() => goTo("/products")}
+              onNavigateToHome={() => goTo("/")}
+            />
+          }
         />
-      )}
+
+        {/* 404 Catch-All Route for unknown routes */}
+        <Route
+          path="*"
+          element={
+            <NotFoundPage
+              onGoHome={() => goTo("/")}
+              onGoProducts={() => goTo("/products")}
+              onSelectCategory={(catId) => {
+                handleCategorySelect(catId);
+                goTo("/products");
+              }}
+              onSearchChange={(q) => handleSearchChange(q)}
+            />
+          }
+        />
+      </Routes>
 
       {/* 5. Creative Quick View Modal */}
       {quickViewProduct && (
@@ -363,11 +396,10 @@ export default function ProductsList() {
           code="ESOO20"
           onUseCoupon={() => {
             if (cart.length > 0) {
-              setCurrentView("cart");
+              goTo("/cart");
             } else {
-              setCurrentView("products");
+              goTo("/products");
             }
-            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           onClose={() => setIsCouponPopupOpen(false)}
         />
@@ -411,30 +443,21 @@ export default function ProductsList() {
         <div className="noon-footer-nav-links">
           <button
             className="footer-link-btn"
-            onClick={() => {
-              setCurrentView("home");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            onClick={() => goTo("/")}
           >
             الرئيسية
           </button>
           <span className="footer-link-sep">•</span>
           <button
             className="footer-link-btn"
-            onClick={() => {
-              setCurrentView("products");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            onClick={() => goTo("/products")}
           >
             كل المنتجات
           </button>
           <span className="footer-link-sep">•</span>
           <button
             className="footer-link-btn"
-            onClick={() => {
-              setCurrentView("about");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            onClick={() => goTo("/about")}
           >
             من نحن (قصة خضرة & المؤسس)
           </button>
@@ -442,7 +465,7 @@ export default function ProductsList() {
           <button
             className="footer-link-btn"
             onClick={() => {
-              setCurrentView("about");
+              goTo("/about");
               setTimeout(() => {
                 document.getElementById("faq-section")?.scrollIntoView({ behavior: "smooth" });
               }, 100);
@@ -453,20 +476,14 @@ export default function ProductsList() {
           <span className="footer-link-sep">•</span>
           <button
             className="footer-link-btn"
-            onClick={() => {
-              setCurrentView("cart");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            onClick={() => goTo("/cart")}
           >
             عربة التسوق
           </button>
           <span className="footer-link-sep">•</span>
           <button
             className="footer-link-btn"
-            onClick={() => {
-              setCurrentView("wishlist");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            onClick={() => goTo("/wishlist")}
           >
             قائمة المفضلة
           </button>
